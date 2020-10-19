@@ -60,7 +60,7 @@ $pathsForPackingRegex = '#^((.*?)templates|(.*?)files)$#';
 $excludedFiles = ['.*', '*.md', 'license'];
 
 // paths to pack in main
-$pathsForPackage = ['language'];
+$pathsForPackage = ['language', 'requirements'];
 
 println('-- Teralios Package Builder for WoltLab® Suite Core --');
 println('                 Current 1.0.0 Beta 1                 ');

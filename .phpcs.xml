@@ -4,5 +4,7 @@
 	<arg name="extensions" value="php" />
 	<arg value="p"/>
 	<arg name="basepath" value="."/>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/debug/*</exclude-pattern>
 	<rule ref="./debug/ruleset.xml"/>
 </ruleset>

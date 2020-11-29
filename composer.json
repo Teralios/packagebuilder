@@ -1,6 +1,6 @@
 {
   "name": "teralios/vulcanus",
-  "description": "Console application to manage and create WoltLab® Suite Core packages.",
+  "description": "Console application to manage and create WoltLab® Suite packages.",
   "keywords": ["WoltLab", "Console", "Files", "Management", "Packing"],
   "license": "GPL-3.0-or-later",
   "type": "project",
@@ -17,9 +17,9 @@
   ],
   "require": {
     "php": ">=7.4",
+    "ext-simplexml": "*",
     "symfony/console": "^5.2",
     "symfony/polyfill-php80": "^v1.20",
-    "symfony/dom-crawler": "^5.2",
     "splitbrain/php-archive": "^1.2.0"
   },
   "require-dev": {

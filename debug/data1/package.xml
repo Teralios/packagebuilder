@@ -21,4 +21,11 @@
         <instruction type="template" run="standalone" application="wcf"/>
         <instruction type="language"/>
     </instructions>
+
+    <instructions type="update">
+        <instruction type="file" run="standalone" application="wcf" />
+        <instruction type="acpTemplate" run="standalone" application="wcf"/>
+        <instruction type="template" run="standalone" application="wcf"/>
+        <instruction type="language"/>
+    </instructions>
 </package>

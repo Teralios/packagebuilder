@@ -12,7 +12,7 @@ class Core extends Application
      */
     public function __construct()
     {
-        parent::__construct("Teralios' WoltLab® Suite Core Package Builder", '1.0.0 Alpha 1');
+        parent::__construct("Teralios' WoltLab® Suite Core Package Builder", '2.0.0 Alpha 1');
         $this->addDefaultCommands();
     }
 

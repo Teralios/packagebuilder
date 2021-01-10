@@ -2,7 +2,10 @@
 
 namespace Teralios\Vulcanus\Package;
 
-class FileMap implements \Iterator
+
+use JetBrains\PhpStorm\Pure;
+
+class FileMap implements \Iterator, \Countable
 {
     protected array $files = [];
     protected int $index = 0;
@@ -10,11 +13,11 @@ class FileMap implements \Iterator
     public function __construct(?array $files = null)
     {
         if ($files !== null) {
-            $this->setFiles($files);
+            $this->addFiles($files);
         }
     }
 
-    public function addFiles(array $files)
+    public function addFiles(array $files): self
     {
         if (!empty($files)) {
             foreach ($files as $file) {
@@ -27,7 +30,9 @@ class FileMap implements \Iterator
 
     public function addFile(string $file): self
     {
-        $this->files[] = $file;
+        if (!in_array($file, $this->files)) {
+            $this->files[] = $file;
+        }
 
         return $this;
     }
@@ -47,13 +52,18 @@ class FileMap implements \Iterator
         return $this->index;
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return isset($this->files[$this->index]);
     }
 
-    public function rewind()
+    public function rewind(): void
     {
         $this->index = 0;
+    }
+
+    public function count(): int
+    {
+        return count($this->files);
     }
 }

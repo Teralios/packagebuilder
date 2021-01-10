@@ -2,9 +2,6 @@
 
 namespace Teralios\Vulcanus\Package;
 
-
-use JetBrains\PhpStorm\Pure;
-
 class FileMap implements \Iterator, \Countable
 {
     protected array $files = [];

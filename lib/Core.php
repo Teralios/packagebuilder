@@ -18,6 +18,5 @@ class Core extends Application
 
     protected function addDefaultCommands()
     {
-
     }
 }

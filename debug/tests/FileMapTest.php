@@ -4,7 +4,7 @@ namespace Teralios\Vulcanus\Tests;
 
 // imports
 use PHPUnit\Framework\TestCase;
-use Teralios\Vulcanus\Package\FileMap;
+use Teralios\Vulcanus\File\FileMap;
 
 class FileMapTest extends TestCase
 {

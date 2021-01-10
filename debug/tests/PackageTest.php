@@ -3,8 +3,8 @@
 namespace Teralios\Vulcanus\Tests;
 
 // imports
-use Teralios\Vulcanus\Package\Package;
 use PHPUnit\Framework\TestCase;
+use Teralios\Vulcanus\Package\Package;
 use Teralios\Vulcanus\Package\PackageException;
 
 /**
@@ -15,7 +15,7 @@ use Teralios\Vulcanus\Package\PackageException;
  * @copyright   ©2020 Teralios.de
  * @license     GNU General Public License <https://www.gnu.org/licenses/gpl-3.0.txt>
  *
- * @covers Teralios\Vulcanus\Package\Package
+ * @covers Package
  */
 final class PackageTest extends TestCase
 {

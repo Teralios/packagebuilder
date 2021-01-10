@@ -1,6 +1,6 @@
 <?php
 
-namespace Teralios\Vulcanus\Package;
+namespace Teralios\Vulcanus\File;
 
 class FileMap implements \Iterator, \Countable
 {

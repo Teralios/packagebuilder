@@ -4,6 +4,7 @@ namespace Teralios\Vulcanus\Package;
 
 // imports
 use SimpleXMLElement;
+use Teralios\Vulcanus\File\FileMap;
 use Teralios\Vulcanus\Helper;
 
 /**
@@ -30,10 +31,10 @@ class Package
 
     // default information of a package
     protected string $packageFile = 'package.xml';
-    protected ?string $id;
-    protected ?string $name;
-    protected ?string $version;
-    protected ?string $abbr;
+    protected string $id;
+    protected string $name;
+    protected string $version;
+    protected string $abbr;
     protected bool $isApplication;
 
     // files and folders.
@@ -190,8 +191,8 @@ class Package
     protected function readPackageXML(): void
     {
         // basic package information
-        $this->id = $this->packageXML->attributes()->name ?? null;
-        if ($this->id === null) {
+        $this->id = $this->packageXML->attributes()->name ?? '';
+        if (empty($this->id)) {
             throw new PackageException('No package name found');
         }
 

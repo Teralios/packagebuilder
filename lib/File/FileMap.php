@@ -2,6 +2,14 @@
 
 namespace Teralios\Vulcanus\File;
 
+/**
+ * Class FileMap
+ *
+ * @package   de.teralios.pb
+ * @author    teralios
+ * @copyright 2021 Teralios.de
+ * @license   CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0/>
+ */
 class FileMap implements \Iterator, \Countable
 {
     protected array $files = [];

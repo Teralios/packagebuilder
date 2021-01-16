@@ -4,6 +4,9 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Teralios/packagebuilder/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Teralios/packagebuilder/?branch=master)
 [![Last commit (GitHub)](https://img.shields.io/github/last-commit/teralios/packagebuilder/master)](https://github.com/Teralios/packagebuilder/commits/master)
 
-# Teralios' Vulcanus
-Simple tools to modify and pack files of WoltLab® Suite Core packages.
-More information comes in the future.
+# Teralios' Vulcanus [EN]
+Vulcanus is a command line utility to pack packages for WoltLab® Community Suite.
+
+PHP8.0 is required. The development is currently in an experimental state.
+
+Since most developers for WoltLab® Community Suite speak German, further documentation will be written in German first.

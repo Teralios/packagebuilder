@@ -19,7 +19,7 @@ class PackageTest extends TestCase
     public function testInvalidPackage(): void
     {
         $this->expectException(\InvalidArgumentException::class);
-        $package = new Package('../'); // no, here is no package.
+        new Package('../'); // no, here is no package.
     }
 
     public function testName(): void
@@ -116,6 +116,23 @@ class PackageTest extends TestCase
         foreach ($instructions as $instruction) {
             if (isset($paths[$instruction->type])) {
                 self::assertEquals($paths[$instruction->type], $instruction->getPath());
+            }
+        }
+    }
+
+    public function testInstructionToMainArchive(): void
+    {
+        $paths = [
+            'template' => false,
+            'acpTemplate' => false,
+            'file' => false,
+            'language' => true,
+        ];
+
+        $instructions = $this->package->getInstructions();
+        foreach ($instructions as $instruction) {
+            if (isset($paths[$instruction->type])) {
+                self::assertEquals($paths[$instruction->type], $instruction->toMainArchive());
             }
         }
     }

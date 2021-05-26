@@ -14,12 +14,13 @@ final class Helper
         return (\str_ends_with($path, '/')) ? $path : $path . '/';
     }
 
-    public static function getAttribute(string $name, \DOMNode $node): string | null
+    public static function getAttribute(string $name, \DOMNode $node): ?string
     {
         if (!$node->hasAttributes()) {
             return null;
         }
 
+        /** @scrutinizer ignore-call */
         $attribute = $node->attributes->getNamedItem($name);
 
         return $attribute->nodeValue ?? null;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Teralios\src\Package;
+namespace Teralios\Vulcanus\Package;
 
 class Instruction
 {
@@ -31,13 +31,13 @@ class Instruction
         return in_array($this->type, self::FILE_TYPES);
     }
 
-    public function getPath(): string
+    public function getPath(): ?string
     {
-        if (empty($this->value)) {
-            return self::TYPE_PATHS[$this->type];
+        if ($this->hasFiles()) {
+            return (empty($this->value)) ? self::TYPE_PATHS[$this->type] : substr($this->value, 0, -4) . '/';
         }
 
-        return substr($this->value, 0, -4) . '/';
+        return null;
     }
 
     public function toMainArchive(): bool
@@ -45,13 +45,13 @@ class Instruction
         return in_array($this->type, self::IN_MAIN);
     }
 
-    public function getFileName(): string | null
+    public function getFileName(): ?string
     {
         if ($this->hasFiles()) {
             return null;
         }
 
-        return match (true) {
+        return match(true) {
             $this->type === 'sql' && empty($this->value) => 'install.sql',
             empty($this->value) => $this->type . '.xml',
         default => $this->value

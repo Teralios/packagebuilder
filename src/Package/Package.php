@@ -33,11 +33,17 @@ class Package
         return $this->name;
     }
 
+    /**
+     * @return Requirement[]
+     */
     public function getRequirements(): array
     {
         return $this->requirements;
     }
 
+    /**
+     * @return Instruction[]
+     */
     public function getInstructions(): array
     {
         return $this->instructions;
@@ -52,9 +58,20 @@ class Package
 
     protected function loadXML(): void
     {
+        // clear current errors
+        \libxml_use_internal_errors(true);
+        \libxml_clear_errors();
+
         $domDocument = new \DOMDocument('1.0', 'UTF-8');
         $domDocument->loadXML(file_get_contents($this->packageFile));
-        $domDocument->schemaValidate('https://www.woltlab.com/XSD/2019/package.xsd');
+        $domDocument->schemaValidate('https://raw.githubusercontent.com/WoltLab/WCF/master/XSD/package.xsd'); // current best option.
+
+        // check errors
+        $xmlErrors = \libxml_get_errors();
+        if (count($xmlErrors)) {
+            throw new \InvalidArgumentException('Invalid package.xml: "' . $this->packageFile . '"');
+        }
+
         $this->packageXML = $domDocument;
 
         $this->parseXML();

@@ -16,8 +16,8 @@
     }
   ],
   "require-dev": {
-    "roave/security-advisories": "dev-latest",
-    "phpunit/phpunit": "~9.4.3"
+    "phpunit/phpunit": "~9.5.4",
+    "roave/security-advisories": "dev-latest"
   },
 
   "require": {
@@ -26,11 +26,13 @@
     "ext-xmlreader": "*",
     "ext-dom": "*",
     "ext-xmlwriter": "*",
+    "ext-libxml": "*",
     "minicli/minicli": "^2.2.0"
   },
 
   "autoload": {
     "psr-4": {
+      "Teralios\\Vulcanus\\Tests\\": "debug/Tests",
       "Teralios\\Vulcanus\\": "src/"
     }
   }

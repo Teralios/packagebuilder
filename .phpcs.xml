@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <ruleset>
-	<file>lib/</file>
+	<file>src/</file>
 	<arg name="extensions" value="php" />
 	<arg value="p"/>
 	<arg name="basepath" value="."/>

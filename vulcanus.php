@@ -3,9 +3,18 @@
 
 require_once('./vendor/autoload.php');
 
-use Teralios\Vulcanus\Config;
-use Teralios\Vulcanus\Core;
+use Teralios\src\Package\Package;
 
-$config = new Config(__FILE__, null);
-$core = new Core($config);
-$core->run();
+$package = new Package('../de.teralios.quizCreator/');
+$instructions = $package->getInstructions();
+
+foreach ($instructions as $instruction) {
+    echo $instruction->type . ':';
+    if ($instruction->hasFiles()) {
+        echo $instruction->getPath();
+    } else {
+        echo $instruction->getFileName();
+    }
+
+    echo "\n";
+}
